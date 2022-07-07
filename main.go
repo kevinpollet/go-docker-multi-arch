@@ -2,14 +2,11 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"runtime"
 )
 
 func main() {
-	_, err := fmt.Fprintf(os.Stdout, "Hello from %q\n", runtime.GOARCH)
-	if err != nil {
-		log.Fatal(err)
-	}
+	fmt.Fprintf(os.Stdout, "OS/Arch:    %s/%s\n", runtime.GOOS, runtime.GOARCH)
+	fmt.Fprintf(os.Stdout, "Go version: %s\n", runtime.Version())
 }
